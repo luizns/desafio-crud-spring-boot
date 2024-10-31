@@ -15,7 +15,7 @@ public class Client {
     private String cpf;
     private Double income;
     private LocalDate birthDate;
-    private Integer Children;
+    private Integer children;
 
     public Client() {
     }
@@ -26,7 +26,7 @@ public class Client {
         this.cpf = cpf;
         this.income = income;
         this.birthDate = birthDate;
-        Children = children;
+        this.children = children;
     }
 
     public Long getId() {
@@ -70,11 +70,11 @@ public class Client {
     }
 
     public Integer getChildren() {
-        return Children;
+        return children;
     }
 
     public void setChildren(Integer children) {
-        Children = children;
+        this.children = children;
     }
 
     @Override
