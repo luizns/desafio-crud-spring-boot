@@ -5,7 +5,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
-import org.hibernate.validator.constraints.br.CPF;
 
 import java.time.LocalDate;
 
@@ -14,7 +13,6 @@ public class ClientDTO {
     @Size(min = 3, max = 80, message = "nome precisa ter de 3 a 80 caracteres")
     @NotBlank(message = "não pode ser vazio")
     private String name;
-    @CPF
     private String cpf;
     @Positive(message = "Renda deve ser positivo")
     private Double income;
@@ -22,6 +20,9 @@ public class ClientDTO {
     private LocalDate birthDate;
     @Positive(message = "Número de filhos deve ser positivo")
     private Integer children;
+
+    public ClientDTO() {
+    }
 
     public ClientDTO(Client entity) {
         id = entity.getId();
