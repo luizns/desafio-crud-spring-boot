@@ -1,10 +1,7 @@
 package com.github.luizns.desafiocrud.DTO;
 
 import com.github.luizns.desafiocrud.entities.Client;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.PastOrPresent;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 import java.time.LocalDate;
 
@@ -18,7 +15,7 @@ public class ClientDTO {
     private Double income;
     @PastOrPresent(message = "não pode ser data futura")
     private LocalDate birthDate;
-    @Positive(message = "Número de filhos deve ser positivo")
+    @PositiveOrZero(message = "Número de filhos deve ser zero ou positivo")
     private Integer children;
 
     public ClientDTO() {
