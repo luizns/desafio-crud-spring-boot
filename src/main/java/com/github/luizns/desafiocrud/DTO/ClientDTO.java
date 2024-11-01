@@ -12,13 +12,13 @@ import java.time.LocalDate;
 public class ClientDTO {
     private Long id;
     @Size(min = 3, max = 80, message = "nome precisa ter de 3 a 80 caracteres")
-    @NotBlank(message = "Campo requerido ")
+    @NotBlank(message = "não pode ser vazio")
     private String name;
     @CPF
     private String cpf;
     @Positive(message = "Renda deve ser positivo")
     private Double income;
-    @PastOrPresent
+    @PastOrPresent(message = "não pode ser data futura")
     private LocalDate birthDate;
     @Positive(message = "Número de filhos deve ser positivo")
     private Integer children;
